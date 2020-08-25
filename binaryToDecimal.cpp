@@ -1,11 +1,5 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
+//Hunter Lewis
+//CECS 282 SEC 07
 #include <iostream>
 #include <string>
 #include <sstream>
