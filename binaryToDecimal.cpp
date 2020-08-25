@@ -1,4 +1,4 @@
-//Hunter Lewis
+//Hunter Lewis and Quan Do
 //CECS 282 SEC 07
 #include <iostream>
 #include <string>
