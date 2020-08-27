@@ -11,12 +11,13 @@ int bin2Dec(string bin)
     stringstream holder(bin);
     int x = 0;
     holder >> x;
-    int biArray[bin.length()] = { };
+    int power = 1;
     int decimal = 0;
-    for(int i; i < bin.length(); i++){
-        biArray[i] = x % 10;
-        decimal += biArray[i] * pow(2,i);
+    while(x > 0){
+        int last = x % 10;
         x /= 10;
+        decimal += last * power;
+        power = power * 2;
     }
     cout << decimal;
     return 0;
