@@ -1,3 +1,7 @@
+//Hunter Lewis and Quan Do
+//CECS 282 SEC 07
+//Sept 1st 2020
+//Question 3
 #include<iostream>
 #include<fstream>
 #include<iomanip>
