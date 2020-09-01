@@ -1,16 +1,13 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
+//Hunter Lewis
+//CECS 282 SEC 07
+//Sept 1st 2020
+//Question 1
 #include <iostream>
 
 using namespace std;
 int main()
 {
+    cout >> "Enter number: "
     int input;
     cin >>  input;
     int odd = 0;
