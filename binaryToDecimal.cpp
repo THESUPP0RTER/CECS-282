@@ -23,7 +23,10 @@ int bin2Dec(string bin)
     return 0;
 }
 
-int main(){
-    bin2Dec("10001");
-    return 0;
+ main (){
+  string s;
+  cout<<"Enter a binary number ";
+  cin >> s;
+  bin2Dec (s);
+  return 0;
 }
