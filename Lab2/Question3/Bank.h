@@ -1,6 +1,7 @@
 /*
 Hunter Lewis and Quan Do
 SEC 07 and 08
+Team 8
 September 8th 2020
 */
 #ifndef BANK_H
@@ -17,6 +18,6 @@ public:
 	void deposit(double amount, string account);
 	void withdraw(double amount, string account);
 	void transfer(double amount, string account);
-	void print_balances() /*const*/;// get const to work 
+	void print_balances();
 };
 #endif

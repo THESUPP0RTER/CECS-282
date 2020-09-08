@@ -1,6 +1,7 @@
 /*
 Hunter Lewis and Quan Do
 SEC 07 and 08
+Team 8
 September 8th 2020
 */
 #include <iostream>
@@ -53,12 +54,12 @@ void Bank::transfer(double money, string acc){
 	}
 }
 void Bank::print_balances(){
-	int c = checking.get_balance();
-	//int * cPtr = &c;
-	int s = savings.get_balance();
-	//int * sPtr = &s;
-	cout << "Checking: " << c;
-    cout << "\nSavings: " << s <<endl;
+    int c = checking.get_balance();
+    int * cPtr = &c;
+    int s = savings.get_balance();
+    int * sPtr = &s;
+    cout << "Checking: " << *cPtr;
+    cout << "\nSavings: " << *sPtr <<endl;
 }
 int main()
 {
@@ -87,5 +88,3 @@ my_bank.print_balances();
 
 return 0;
 }
-
-

@@ -1,6 +1,7 @@
 /*
 Hunter Lewis and Quan Do
 SEC 07 and 08
+Team 8
 September 8th 2020
 */
 
