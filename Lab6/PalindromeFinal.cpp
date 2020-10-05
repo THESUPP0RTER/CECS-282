@@ -3,45 +3,45 @@
 #include <string>
 #include <cstring>
 using namespace std;
-void transform(char *raw, char *testStr){
-    int strlength  = strlen(raw);
-    int j = 0;
-    for(int i = 0; i < strlength; i++){
-        raw[i] = toupper(raw[i]);
+void transform( char *raw, char *testStr){
+    int count = strlen(raw);
+    for(int i = 0; raw[i] != '\0'; i++){
+        if(isalpha(raw[i]) == 0 || isspace(raw[i])){
+            count--;
+        }
     }
-    for(int i = 0; i < strlength; i++){
+    char *temp = new char[count+1];
+    int j = 0;
+    for(int i = 0; i < strlen(raw); i++){
         if(isalpha(raw[i])){
-            testStr[j] = raw[i];
+            temp[j] = toupper(raw[i]);
             j++;
         }
     }
+    temp[count] = '\0';
+    strcpy(testStr, temp);
 }
-
 bool testPalindrome(char *s){
     int i = 0;
-    int r = 1 + strlen(s) - 1;
+    int r = strlen(s) - 1;
 
     while(i != r){
         if(s[i] != s[r])
             return false;
-        i++;
-        r--;
-    }
+        else{
+            i++;
+            r--;
+        }
     return true;
+    }
+return false;
 }
-
 int main(){
     cout<< "Enter a word or scentence to see if it is a palindrome."<<endl;
     string s;
     getline(cin, s);
-
-    //declares a constant char[] and puts the contents of s into it
     const char* input = s.c_str();
-
-    //make a new char[] of length s + 1 so we can have \0 at the end
     char* test = new char[s.length() + 1];
-
-    //copies char[] input to char[] test
     strcpy(test, input);
     transform(test, test);
     if(testPalindrome(test) == true)
