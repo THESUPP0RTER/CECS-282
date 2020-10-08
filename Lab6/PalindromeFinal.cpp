@@ -1,3 +1,9 @@
+/*
+Hunter Lewis
+CECS 282
+Lab 6
+October 8th 2020
+*/
 #include <iostream>
 #include <stdio.h>
 #include <string>
@@ -37,15 +43,35 @@ bool testPalindrome(char *s){
 return false;
 }
 int main(){
-    cout<< "Enter a word or scentence to see if it is a palindrome."<<endl;
+    string x;
+    bool y = true;
+    while(y){
     string s;
+    cout<< "Enter a word or scentence to see if it is a palindrome."<<endl;
     getline(cin, s);
+
+    //declares a constant char[] and puts the contents of s into it
     const char* input = s.c_str();
+
+    //make a new char[] of length s + 1 so we can have \0 at the end
     char* test = new char[s.length() + 1];
+
+    //copies char[] input to char[] test
     strcpy(test, input);
+
     transform(test, test);
-    if(testPalindrome(test) == true)
-        cout << "The statement is a palindrome";
-    else
-        cout << "The statement isn't a palindrome";
+    if(testPalindrome(test) == true){
+        cout<<"That sentence is a palindrome"<<endl;
+    }
+    else{
+        cout<<"That sentence is not a palindrome"<<endl;
+    }
+    cout<<"Do you want to continue, yes or no"<<endl;
+    cin>>x;
+    cin.ignore();
+    if(x == "no" || x == "No"){
+        y = false;
+        }
+    }
+    return 0;
 }
