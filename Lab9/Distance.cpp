@@ -1,14 +1,19 @@
 #include<iostream>
 #include "Distance.h"
 using namespace std;
-Distance Distance::operator+(Distance& d2) {
-	int totalFeet = feet + d2.feet;
-	int totalInches = inches + d2.inches;
-	while (totalInches >= 12) {
-		in = in - 12;
-		ft = ft + 1;
+Distance Distance::operator++(int) {
+	return Distance(feet + 1, inches);
+}
+Distance Distance::operator+(int n) {
+	return Distance(feet + n, inches);
+}
+bool Distance::operator>(Distance& o) {
+	if ((feet > o.feet) && (inches > o.inches)) {
+		return true;
 	}
-	return Disntace(totalFeet, totalInches);
+	else {
+		return false;
+	}
 }
 Distance operator-(Distance d1, Distance d2) const{
 	int totalFeet = d1.feet - d2.feet;
@@ -56,5 +61,15 @@ int main()
 	cout << dist3 << endl;
 	cout << "dist4 = ";
 	cout << dist4 << endl;
+	dist2 = dist1++; //Increase feet by one
+	dist3 = dist2 + 10;//10 mean feet
+	cout << "dist2 = ";
+	cout << dist2 << endl;
+	cout << "dist3 = ";
+	cout << dist3 << endl;
+	if (dist4 > dist1)
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
 	return 0;
 }

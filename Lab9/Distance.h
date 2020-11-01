@@ -8,9 +8,11 @@ private:
 public: //constructor (no args)
 	Distance() {};
 	Distance(int ft, float in) {};
-	Distance operator+(const Distance & d2) const;
+	Distance operator++(int);
+	Distance operator+(int n);
+	bool operator>(Distance&);
 	//overloaded operator - using friend function
-	friend Distance operator-(const Distance & d2) const;
+	friend Distance operator-(Distance d1, Distance d2) const;
 	//overloading >> and << operator using friend function
 	friend istream& operator >>(istream& in, Distance& d);
 	friend ostream& operator <<(ostream& out, Distance& d);
