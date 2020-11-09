@@ -5,19 +5,18 @@ class Time12
 {
 private:
     bool pm;                       //true = pm, false = am
-    int hrs;                       //1 to 12
-    int mins;                      //0 to 59
+    int hrs;                     
+    int mins;                    
 public:                           
-    Time12() : pm(true), hrs(0), mins(0) //no-arg constructor
+    Time12() : pm(true), hrs(0), mins(0) 
     {  }
-    //3-arg constructor
     Time12(bool ap, int h, int m) : pm(ap), hrs(h), mins(m)
     {  }
-    void display() const           //format: 11:59 p.m.
+    void display() const           
     {
         cout << hrs << ':';
         if (mins < 10)
-            cout << '0';             //extra zero for "01"
+            cout << '0';         
         cout << mins << ' ';
         string am_pm = pm ? "p.m." : "a.m.";
         cout << am_pm;
@@ -50,7 +49,6 @@ Time24::operator Time12()
 {
     int hrs24 = hours;
     bool pm = hours < 12 ? false : true;  
-    //round secs
     int roundMins = seconds < 30 ? minutes : minutes + 1;
     if (roundMins == 60)                    
     {
