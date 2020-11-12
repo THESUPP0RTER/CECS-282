@@ -8,7 +8,10 @@ class pointerDataClass{
 public:
    pointerDataClass(int size);
    ~pointerDataClass();
+
+   //Commenting out will make it a shallow copy
    pointerDataClass(const pointerDataClass&other);
+
    void insertAt(int index, int num);
    void displayData();
    void get();//get the length of the arrray
@@ -26,6 +29,8 @@ pointerDataClass::~pointerDataClass()
 {
    delete this->p;
 }
+//Commenting out will make it a Shallow copy
+
 pointerDataClass::pointerDataClass(const pointerDataClass&other)
 {
    this->maxSize = other.maxSize;
@@ -34,7 +39,7 @@ pointerDataClass::pointerDataClass(const pointerDataClass&other)
    for (int index = 0; index < other.maxSize; index++)
        this->p[index] = other.p[index];
 }
-void pointerDataClass::insertAt(int index, int num) \
+void pointerDataClass::insertAt(int index, int num)
 {
    this->p[index] = num;
    this->length++;

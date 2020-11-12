@@ -32,4 +32,5 @@ void gamma::showid() {
 
 gamma::~gamma() {
     cout << "Destroying ID number " << id << endl;
+    total--;
 }
