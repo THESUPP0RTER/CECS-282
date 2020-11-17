@@ -6,7 +6,11 @@
 
 #include <list>
 
+#include <vector>
+
 #include<algorithm>
+
+#include<numeric>//for accumulator operations
 
 using namespace std;
 
@@ -15,7 +19,6 @@ using namespace std;
 int main()
 
 {
-
     //Create 2 lists called list1 and list2. Store integer numbers.
     int arr1[] = { 40, 30, 20, 10 };
     int arr2[] = { 15, 20, 25, 30, 35 };
@@ -52,13 +55,13 @@ int main()
 
 
      //Display the list1 in reverse
-
+    cout <<  endl;
     l1.reverse();
     for (itr = l1.begin(); itr != l1.end(); ++itr) {
         cout << *itr << " ";
     }
+    
     cout << endl;
-
 
 
      //Find 25 in the list. If it's found, display "Found 25";otherwise, display "Not found 25"
