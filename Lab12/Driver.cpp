@@ -5,19 +5,19 @@
 using namespace std;
 template <typename X>
 int ReadInput( const string & s, vector <X> & v ) {
-    istringstream is( _____________ );//FILL IN BLANK
+    istringstream is(s);//FILL IN BLANK
     int n;
     if(typeid(int)==typeid(X))
     {
     while( is >> n ) {
-        v.push_back( n );
+        v.push_back(n);
     }
     }
     //Check type X for char
-    if(__________________________)//FILL IN BLANK
-    {int i =0;
-    while( i<s.length() ) {
-        ____________________( s.______t(i) );//FILL IN BLANK
+    if(typeid(char) == typeid(X)){
+        int i = 0;
+        while(i<s.length()) {
+        v.push_back(s.at(i));//FILL IN BLANK
         i++;
     }
     }
@@ -25,28 +25,25 @@ int ReadInput( const string & s, vector <X> & v ) {
 }
 
 // function template palindrome definition
-template <typename X>
-bool palindrome(const vector<X>& vec) {
-   auto r=vec.crbegin(); 
-   auto i=vec.cbegin();
-
-   while (r != vec.crend() && i != vec.__________) {//FILL IN BLANK
-      if (*r != _____) { // //FILL IN BLANK
-         return false;
-      }
-
-      ++r;
-      _________;//FILL IN BLANK
-   } 
-
-   return true; // the vector is a palindrome
-} 
-
+template < typename X>
+bool palindrome(const vector<X> &vec)
+{
+    auto r = vec.crbegin();
+    auto i = vec.cbegin();
+    while (r != vec.crend() && i != vec.cend()){
+        if (*r != *i){
+            return false;
+        }
+        ++r;
+        ++i;
+        }
+    return true;
+}
 // function template printVector definition
 template <typename Y>
 void printVector(const vector<Y>& vec) {
-   for (auto i=vec.cbegin(); i != vec.size(); ++i) {//FILL IN BLANK
-      cout << vec(i) << ' ';//FILL IN BLANK
+   for (auto i=vec.cbegin(); i != vec.cend(); ++i) {//FILL IN BLANK
+      cout << *i << ' ';//FILL IN BLANK
    }
 } 
 
@@ -54,7 +51,6 @@ int main() {
    vector<int> iv;//FILL IN BLANK
    vector<string> ic;//FILL IN BLANK
    int x=0;
-
    cout<<"Enter single digit separted by a space:"<<endl;
    string s;
    getline(cin, s);
