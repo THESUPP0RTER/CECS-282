@@ -67,7 +67,10 @@ int main(){
 	Person* sPerson = &searchPerson;
 	int cntPersons = persSet.count(sPerson); // get count of such persons
 	cout << "Number of persons with this name are " << cntPersons;
-	
+	if(cntPersons == 0){
+        cout<< "No Matches found" << endl;
+    }
+
 	iter = persSet.lower_bound(sPerson);
 	while (iter != persSet.upper_bound(sPerson)) {
 		(*iter++)->display();
